@@ -1,0 +1,21 @@
+{
+  "siteTitle": "Michael Olivier — Prototypes",
+  "prototypes": [
+    {
+      "id": "golf-league-app",
+      "title": "Fairway League",
+      "description": "Mobile-friendly golf league demo: weekly matches, score entry, GHIN handicaps, course search, and foursome scoring.",
+      "href": "https://michael-olivier.github.io/golf-league-app/",
+      "icon": "golf",
+      "githubRepo": "michael-olivier/golf-league-app"
+    },
+    {
+      "id": "career-coach-agent",
+      "title": "Career Coach Agent",
+      "description": "Scandinavian-inspired HR career coach concept: agent home, workspace pages, tasks, growth, and AI chat prompts.",
+      "href": "https://michael-olivier.github.io/career-coach-agent-pages/#/pages/home",
+      "icon": "career",
+      "githubRepo": "michael-olivier/career-coach-agent-pages"
+    }
+  ]
+}
