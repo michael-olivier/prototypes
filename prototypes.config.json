@@ -3,7 +3,7 @@
   "prototypes": [
     {
       "id": "golf-league-app",
-      "title": "Fairway League",
+      "title": "Sandbagger",
       "description": "Mobile-friendly golf league demo: weekly matches, score entry, GHIN handicaps, course search, and foursome scoring.",
       "href": "https://michael-olivier.github.io/golf-league-app/",
       "icon": "golf",
