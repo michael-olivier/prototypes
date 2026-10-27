@@ -89,7 +89,7 @@ body {
   display: grid;
   grid-template-columns: auto 1fr auto;
   gap: 1.15rem;
-  align-items: start;
+  align-items: center;
   padding: 1.25rem 1.35rem;
   border: 1px solid var(--gray-line);
   border-radius: 0.875rem;
@@ -129,32 +129,44 @@ body {
 
 .card-icon {
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  width: 3.125rem;
-  height: 3.125rem;
-  border-radius: 0.625rem;
+  width: 7.5rem;
+  height: 7.5rem;
+  border-radius: 0.75rem;
   color: var(--ink);
 }
 
-.card--sage .card-icon {
+.card-icon--logo {
+  padding: 0.65rem;
+  overflow: hidden;
+}
+
+.card-icon--logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.card--sage .card-icon:not(.card-icon--logo) {
   background: var(--sage-soft);
   color: var(--sage);
 }
 
-.card--blue .card-icon {
+.card--blue .card-icon:not(.card-icon--logo) {
   background: var(--blue-soft);
   color: var(--blue);
 }
 
-.card--rose .card-icon {
+.card--rose .card-icon:not(.card-icon--logo) {
   background: var(--rose-soft);
   color: var(--rose);
 }
 
 .card-icon svg {
-  width: 1.625rem;
-  height: 1.625rem;
+  width: 2.75rem;
+  height: 2.75rem;
 }
 
 .card-body h2 {

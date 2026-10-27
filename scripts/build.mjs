@@ -1,5 +1,12 @@
 #!/usr/bin/env node
-import { cpSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import {
+  cpSync,
+  existsSync,
+  mkdirSync,
+  readFileSync,
+  rmSync,
+  writeFileSync,
+} from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -42,6 +49,8 @@ const items = await Promise.all(
     description: item.description,
     href: item.href,
     icon: item.icon,
+    logoUrl: item.logoUrl ?? null,
+    logoBackground: item.logoBackground ?? null,
     updatedAt: await lastPushDate(item.githubRepo),
   })),
 );
@@ -56,6 +65,11 @@ mkdirSync(out, { recursive: true });
 
 for (const name of ["index.html", "styles.css", "hub.js"]) {
   cpSync(join(siteSrc, name), join(out, name));
+}
+
+const assetsSrc = join(siteSrc, "assets");
+if (existsSync(assetsSrc)) {
+  cpSync(assetsSrc, join(out, "assets"), { recursive: true });
 }
 
 writeFileSync(join(out, "prototypes.json"), `${JSON.stringify(prototypes, null, 2)}\n`);

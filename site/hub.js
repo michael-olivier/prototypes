@@ -24,18 +24,27 @@ function isExternal(href) {
   return /^https?:\/\//i.test(href);
 }
 
+function renderCardIcon(item) {
+  if (item.logoUrl) {
+    const bg = (item.logoBackground || "transparent").replace(/"/g, "");
+    const src = item.logoUrl.replace(/"/g, "");
+    return `<div class="card-icon card-icon--logo" style="background-color: ${bg}"><img src="${src}" alt="" width="120" height="120" decoding="async" /></div>`;
+  }
+  const icon = ICONS[item.icon] ?? ICONS.golf;
+  return `<div class="card-icon">${icon}</div>`;
+}
+
 function renderCard(item) {
   const external = isExternal(item.href);
   const rel = external ? ' rel="noopener noreferrer"' : "";
   const target = external ? ' target="_blank"' : "";
-  const icon = ICONS[item.icon] ?? ICONS.golf;
   const accent = ACCENT_BY_ICON[item.icon] ?? "sage";
   const title = item.title.replace(/</g, "&lt;");
   const description = item.description.replace(/</g, "&lt;");
 
   return `
     <a class="card card--${accent}" href="${item.href}"${target}${rel}>
-      <div class="card-icon">${icon}</div>
+      ${renderCardIcon(item)}
       <div class="card-body">
         <h2>${title}</h2>
         <p>${description}</p>
