@@ -21,7 +21,7 @@ Edit `prototypes.config.json`:
 }
 ```
 
-Icons: `golf` (sage accent), `career` (pale blue). Add icons and accent mapping in `site/hub.js`; accents are `sage`, `blue`, or `rose` in CSS.
+Icons: `golf` (sage accent), `nexus` (pale blue, backwards “N” mark). Add icons and accent mapping in `site/hub.js`; accents are `sage`, `blue`, or `rose` in CSS.
 
 Push to `main` to redeploy.
 

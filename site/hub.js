@@ -1,12 +1,12 @@
 const ICONS = {
   golf: `<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7.75" r="4" fill="currentColor"/><path fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" d="M9.25 12.25h5.5M12 12.25V20"/></svg>`,
-  career: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M12 12v3M9 12h6"/></svg>`,
+  nexus: `<svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path fill="currentColor" d="M9 8h9v14.5L30 8h9v32h-9V25.5L18 40H9V8z"/></svg>`,
 };
 
 /** Card accent: sage | blue | rose */
 const ACCENT_BY_ICON = {
   golf: "sage",
-  career: "blue",
+  nexus: "blue",
 };
 
 function formatUpdated(iso) {
@@ -31,7 +31,8 @@ function renderCardIcon(item) {
     return `<div class="card-icon card-icon--logo" style="background-color: ${bg}"><img src="${src}" alt="" width="120" height="120" decoding="async" /></div>`;
   }
   const icon = ICONS[item.icon] ?? ICONS.golf;
-  return `<div class="card-icon">${icon}</div>`;
+  const nexusClass = item.icon === "nexus" ? " card-icon--nexus" : "";
+  return `<div class="card-icon${nexusClass}">${icon}</div>`;
 }
 
 function renderCard(item) {

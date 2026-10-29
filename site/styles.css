@@ -169,6 +169,11 @@ body {
   height: 2.75rem;
 }
 
+.card-icon--nexus svg {
+  width: 3.25rem;
+  height: 3.25rem;
+}
+
 .card-body h2 {
   margin: 0;
   font-size: 1.0625rem;
