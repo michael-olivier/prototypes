@@ -7,6 +7,7 @@ const ICONS = {
 const ACCENT_BY_ICON = {
   golf: "sage",
   nexus: "blue",
+  "design-system": "rose",
 };
 
 function formatUpdated(iso) {
@@ -31,7 +32,8 @@ function renderCardIcon(item) {
     return `<div class="card-icon card-icon--logo" style="background-color: ${bg}"><img src="${src}" alt="" width="120" height="120" decoding="async" /></div>`;
   }
   const icon = ICONS[item.icon] ?? ICONS.golf;
-  const nexusClass = item.icon === "nexus" ? " card-icon--nexus" : "";
+  const nexusClass =
+    item.icon === "nexus" || item.icon === "design-system" ? " card-icon--nexus" : "";
   return `<div class="card-icon${nexusClass}">${icon}</div>`;
 }
 
